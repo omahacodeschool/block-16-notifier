@@ -1,5 +1,3 @@
-require "sqlite3"
-
 class Phone
 	def self.format_number(phone)
 		phone_number = phone.split("")
@@ -15,13 +13,13 @@ class Phone
 	end
 
 	def self.add_number(phone)
-		number = phone.format_number
-		newTask = DB.execute("INSERT INTO phone_numbers (phone) VALUES (#{number})")
+		number = Phone.format_number(phone)
+		# newTask = DB.execute("INSERT INTO phone_numbers (phone) VALUES (#{number})")
 	end
 
 	def self.delete(deleted_number)
-		number = deleted_number.format_number
-		DB.execute("DELETE from phone_numbers WHERE phone = #{number}")
+		number = Phone.format_number(deleted_number)
+		# DB.execute("DELETE from phone_numbers WHERE phone = #{number}")
 	end
 	
 end
