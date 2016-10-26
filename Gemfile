@@ -19,3 +19,7 @@ gem 'sinatra-redirect-with-flash'
 gem "minitest-rg"
 
 gem "rake"
+
+gem 'twilio-ruby'
+
+gem 'rest-client'

@@ -1,4 +1,4 @@
-class Phone
+class Phone < ActiveRecord::Base
 	def self.format_number(phone)
 		phone_number = phone.split("")
 
