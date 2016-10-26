@@ -1,13 +1,18 @@
 MyApp.get "/" do
 
-	addNumber = Phone.add_number
-	redirect '/submitted'
 	erb :"home"
 
 end
 
-MyApp.get "/submitted" do
+MyApp.post "/submitted" do
 
-	erb :"submitted"
+	savePhone = Phone.add_number(params[:phone])
 
+	redirect '/'
+
+end
+
+MyApp.post '/delete' do
+	deleteNumber = Phone.delete(params[:deleted_number])
+	redirect '/'
 end

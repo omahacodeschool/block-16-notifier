@@ -16,6 +16,12 @@ class Phone
 
 	def self.add_number(phone)
 		number = phone.format_number
-		# TODO
+		newTask = DB.execute("INSERT INTO phone_numbers (phone) VALUES (#{number})")
 	end
+
+	def self.delete(deleted_number)
+		number = deleted_number.format_number
+		DB.execute("DELETE from phone_numbers WHERE phone = #{number}")
+	end
+	
 end
