@@ -19,6 +19,11 @@ MyApp.post "/delete" do
 end
 
 MyApp.get "/sendnotificationofspecial" do
-	sendSpecialText = Message.send_message(ENV['TWILIO_NUMBER'])
+	@saved_numbers = Array.new
+	@saved_numbers = ["put real number in here", "put real number in here"]
+	binding.pry
+	@saved_numbers.each do |element|
+		sendSpecialText = Message.send_message(element)
+	end
 	erb :"temp"
 end
