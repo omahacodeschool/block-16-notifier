@@ -23,3 +23,7 @@ gem "rake"
 gem 'twilio-ruby'
 
 gem 'rest-client'
+
+group :development, :test do
+  gem "dotenv"
+end
