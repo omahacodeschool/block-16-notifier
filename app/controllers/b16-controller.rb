@@ -21,7 +21,7 @@ end
 MyApp.get "/sendnotificationofspecial" do
 	@saved_numbers = Array.new
 	@saved_numbers = ["put real number in here", "put real number in here"]
-	binding.pry
+
 	@saved_numbers.each do |element|
 		sendSpecialText = Message.send_message(element)
 	end
