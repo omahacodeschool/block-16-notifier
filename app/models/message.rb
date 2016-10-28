@@ -1,7 +1,6 @@
 class Message
 
   def self.send_message(number)
-  	# For the method, we might pass in the phone numbers from the DB as arguments
       @text_number = number
       @twilio_number = ENV['TWILIO_NUMBER']
       @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
