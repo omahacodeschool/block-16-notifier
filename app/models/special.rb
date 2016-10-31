@@ -7,10 +7,11 @@ class Special
 		return specialsInfo
 	end
 
-	def self.printInfo
-		# test method for seeing if I get the json info
-		testInfo = Special.getFacebookInfo
-		return testInfo
+	def self.printInfo(info)
+		# testInfo = info[0]["data"][0]["message"]
+		testInfo = info
+		binding.pry
+		return testInfo["data"][0]["message"]
 	end
 
 end

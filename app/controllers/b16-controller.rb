@@ -30,7 +30,7 @@ MyApp.get "/sendnotificationofspecial" do
 end
 
 MyApp.get "/testjsonresponse" do
-	@testing = Special.printInfo
-		binding.pry
+	@APIInfo = Special.getFacebookInfo
+	@testing = Special.printInfo(@APIInfo)
 	erb :"temp"
 end
