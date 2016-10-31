@@ -13,6 +13,7 @@ Bundler.require
 require 'dotenv'
 Dotenv.load
 
+Dotenv.load("/Users/kimarmstrong/Code/block-16-notifier/.env.local")
 # This is an add-on to the Web framework, which scans your code anew each time
 # you save it. Otherwise, you would have to `Control + C` to stop the server
 # and then run it again--each time you changed your code.
