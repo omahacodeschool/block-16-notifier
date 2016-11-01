@@ -7,6 +7,10 @@ end
 MyApp.post "/submitted" do
 
 	savePhone = Phone.add_number(params[:phone])
+	@raw_phone_number = params[:phone]
+	@phone_number = Phone.format_number(@raw_phone_number)
+
+	sendtext = Message.send_message(@phone_number)
 
 	redirect '/'
 	erb :"home"
