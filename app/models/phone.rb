@@ -9,6 +9,7 @@ class Phone < ActiveRecord::Base
 			end
 		end		
 		formatted_number = phone_number.join
+		formatted_number.insert(0, "1")
 		return formatted_number
 	end
 
