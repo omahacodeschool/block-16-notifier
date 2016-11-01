@@ -10,7 +10,6 @@ class Special
 	def self.printInfo(info)
 		# testInfo = info[0]["data"][0]["message"]
 		testInfo = info
-		binding.pry
 		return testInfo["data"][0]["message"]
 	end
 
