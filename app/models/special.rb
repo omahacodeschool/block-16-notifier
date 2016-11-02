@@ -13,4 +13,10 @@ class Special
 		return testInfo["data"][0]["message"]
 	end
 
+	def self.getTime
+		@APIInfo = Special.getFacebookInfo
+		time = @APIInfo["data"][0]["created_time"]
+		relevant_time = time[10,18]
+		if relevant_time.between?()
+	end
 end
