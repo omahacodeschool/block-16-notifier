@@ -2,11 +2,22 @@
 <html>
 <head>
   <title>Block16Notifier</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if @error != nil %>
+  <div class="container">
+    <% @error.each do |error_message| %>
+      <div role="alert">
+        <button type="button" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Error!</strong> <%= error_message %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 <%= yield %>
 
