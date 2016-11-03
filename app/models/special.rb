@@ -16,7 +16,13 @@ class Special
 	def self.getTime
 		@APIInfo = Special.getFacebookInfo
 		time = @APIInfo["data"][0]["created_time"]
-		relevant_time = time[10,18]
-		if relevant_time.between?()
+		relevant_time = time[11..12]
+		relevant_time = relevant_time.to_i
+		if !(relevant_time < 14) and !(relevant_time > 16)
+			# will need the following data to be added in an entry into the DB
+			 @APIInfo["data"][0]["message"]
+			 @APIInfo["data"][0]["attachments"]["data"]["media"]["image"]["src"]
+
+		else 
 	end
 end
