@@ -22,6 +22,9 @@ class Facebook
 
     # Return True if the entry is a duplicate.
     def self.is_duplicate?(text)
+        # Thoughts: unless we save from the database the time that the entry was recorded, I don't believe we can actually 
+        # check for duplicates.  I assume that when they have repeat specials it would be easy to repeat the specials text
+        
         # Compare new entry from Facebook to local DB (to avoid duplicates)
     end
 end

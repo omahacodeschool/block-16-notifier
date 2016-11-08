@@ -19,6 +19,11 @@ class SiteController < ApplicationController
 	end
   end
 
+  def look_for_special
+  	@new_blast = Blast.create
+
+  end
+
   private
 
   def phone_params
