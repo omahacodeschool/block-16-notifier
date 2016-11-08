@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108173356) do
+ActiveRecord::Schema.define(version: 20161108191715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 20161108173356) do
   create_table "daily_specials", force: :cascade do |t|
     t.text     "text"
     t.text     "photo"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "sent",       default: "false"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "sent",         default: "false"
+    t.string   "created_time"
   end
 
   create_table "phones", force: :cascade do |t|
