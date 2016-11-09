@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   get 'site/home'
 
-  get 'site/submitted'
-
-  resources :daily_specials
-  resources :phones
+  resources :daily_specials, :phones
 
   root to: "site#home"
 
