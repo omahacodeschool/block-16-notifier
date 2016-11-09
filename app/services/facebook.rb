@@ -16,15 +16,17 @@ class Facebook
         # entry = ???
 
         if !self.is_duplicate?(created_at_time)
-            DailySpecial.create(text: entry["foo"], image: entry["bar"])
+            DailySpecial.create(text: message, image: image, created_time: created_at_time)
             # In the database, 'DailySpecial' would have 'sent' be 'false' by default.
         end
+
     end
 
     # Return True if the entry is a duplicate.
-    def self.is_duplicate?(text)
-        all_specials = DailySpecial.where(created_time: text)
+    # I think I need help to verify that the boolean will work.
 
-        # Compare new entry from Facebook to local DB (to avoid duplicates)
+    def self.is_duplicate?(text)
+        all_specials = DailySpecial.exists?(created_time: text)
     end
+    
 end
