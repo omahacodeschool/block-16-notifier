@@ -16,7 +16,7 @@ class SiteController < ApplicationController
 	end
   end
 
-  def look_for_special
+  def send_blast
   	@new_blast = Blast.create
 
   end
