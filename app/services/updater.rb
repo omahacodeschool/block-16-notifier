@@ -6,7 +6,7 @@ class Updater
     def self.send_update_to_subscribers(number)
       text_number = number
       twilio_number = ENV['TWILIO_NUMBER']
-      daily_special = 
+      daily_special = #NEED MESSAGE INFO HERE
       @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
 
       message = @client.account.messages.create(

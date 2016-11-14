@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'site/home'
 
-  resources :daily_specials, :phones
+  post "phones" => 'site#create'
+
+  get "facebook" => "site#check_facebook_api"
 
   root to: "site#home"
 
