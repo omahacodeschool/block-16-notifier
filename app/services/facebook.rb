@@ -24,7 +24,7 @@ class Facebook
         # entry = ???
 
         if !self.is_duplicate?(created_at_time)
-            DailySpecial.create(text: message, image: image, created_time: created_at_time)
+            DailySpecial.create(text: message, photo: image, created_time: created_at_time)
             # In the database, 'DailySpecial' would have 'sent' be 'false' by default.
         end
 
