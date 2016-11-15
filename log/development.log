@@ -1789,3 +1789,5 @@ ActionView::MissingTemplate (Missing template site/send_blast, application/send_
   Rendered /Users/sumeetjain/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/sumeetjain/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/sumeetjain/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (194.7ms)
+  [1m[36mDailySpecial Load (0.4ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials"[0m
+  [1m[35mDailySpecial Load (2.7ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1
