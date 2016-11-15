@@ -6,14 +6,16 @@ class Updater
     def self.send_update_to_subscribers(number)
       text_number = number
       twilio_number = ENV['TWILIO_NUMBER']
-      daily_special = #NEED MESSAGE INFO HERE
+      special = DailySpecial.where("sent = 'false'")[0]
+      special_text = special.text[0...100]
+      special_image = special.photo
       @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
 
       message = @client.account.messages.create(
         :from => twilio_number,
         :to => text_number,
-        :body => daily_special,
-        :media_url => image_url 
+        :body => special_text,
+        :media_url => special_image 
       )
     end
 end

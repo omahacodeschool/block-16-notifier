@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root to: "site#home"
 
-  post "blast" => "site#send_blast"
+  get "blast" => "site#send_blast"
 
 
 

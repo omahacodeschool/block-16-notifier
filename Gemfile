@@ -45,3 +45,5 @@ group :development do
 end
 
 gem "httparty"
+
+gem 'twilio-ruby', '~> 4.11.1'
