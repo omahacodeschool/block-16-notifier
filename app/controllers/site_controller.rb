@@ -5,7 +5,7 @@ class SiteController < ApplicationController
 
 
   def create
-	@phone = Phone.new(phone_params)
+  @phone = Phone.format_number(phone_params)
 
 	if @phone.save
 		flash[:notice] = "Thank you for submitting your phone number.  Look forward to hearing about Block 16's amazing specials."
