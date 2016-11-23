@@ -26,6 +26,12 @@ class SiteController < ApplicationController
 
   def check_facebook_api
   	@check_facebook = Facebook.get_latest_entry
+    redirect_to most_recent_special_path
+  end
+
+  def most_recent_special
+    @todays_special = DailySpecial.where(sent:"false")
+    binding.pry
   end
 
   private
