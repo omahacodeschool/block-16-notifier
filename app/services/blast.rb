@@ -12,9 +12,9 @@ class Blast
           Phone.each do |element|
             element.number << saved_numbers
           end
-    		  # saved_numbers.each do |element|
-    		  #   sendSpecialText = Updater.send_update_to_subscribers(element)
-		    end
+    		  saved_numbers.each do |element|
+    		    sendSpecialText = Updater.send_update_to_subscribers(element)
+		      end
           # This should update the DB record with the false entry, and make it true so that it won't catch that entry
           # and send another blast.
           

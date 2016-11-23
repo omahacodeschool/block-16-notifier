@@ -2758,3 +2758,90 @@ Processing by SiteController#most_recent_special as HTML
   [1m[36mDailySpecial Load (0.2ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1[0m  [["sent", "false"]]
   Rendered site/todaysspecial.html.erb within layouts/application (8.7ms)
 Completed 200 OK in 270ms (Views: 265.1ms | ActiveRecord: 2.0ms)
+  [1m[36mPhone Load (1.6ms)[0m  [1mSELECT "phones".* FROM "phones"[0m
+  [1m[35mPhone Load (0.4ms)[0m  SELECT "phones".* FROM "phones" WHERE "phones"."id" = $1  [["id", 1]]
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "phones" WHERE "phones"."id" = $1[0m  [["id", 1]]
+  [1m[35mPhone Load (2.4ms)[0m  SELECT "phones".* FROM "phones"
+
+
+Started GET "/" for ::1 at 2016-11-23 16:18:22 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 441ms (Views: 429.6ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/phones" for ::1 at 2016-11-23 16:18:29 -0600
+Processing by SiteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JfkPS4e9RmWK7xMMtRiI6DYKjLKvCnAiC8wkuMb57mahfv2PY4OpQ11rSme1JtIqWF7z+nYX5pXMj9uNHWJT7w==", "phone"=>{"number"=>"4026608760"}, "commit"=>"Create Phone"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "phones" ("number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["number", "14026608760"], ["created_at", "2016-11-23 22:18:29.986329"], ["updated_at", "2016-11-23 22:18:29.986329"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/submitted
+Completed 302 Found in 10ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/submitted" for ::1 at 2016-11-23 16:18:30 -0600
+Processing by SiteController#submitted as HTML
+  Rendered site/submitted.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-23 16:18:33 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+  [1m[36mPhone Load (0.6ms)[0m  [1mSELECT "phones".* FROM "phones"[0m
+  [1m[35mDailySpecial Load (1.7ms)[0m  SELECT "daily_specials".* FROM "daily_specials"
+  [1m[36mDailySpecial Load (0.4ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."id" = $1[0m  [["id", 4]]
+  [1m[35mSQL (2.9ms)[0m  DELETE FROM "daily_specials" WHERE "daily_specials"."id" = $1  [["id", 4]]
+  [1m[36mDailySpecial Load (0.5ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials"[0m
+
+
+Started GET "/facebook" for ::1 at 2016-11-23 16:19:47 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (0.5ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-11-23T16:13:01+0000"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "daily_specials" ("text", "photo", "created_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["text", "It's True.  The lobster-shrimp grilled cheese is back.  Maine Lobster, butter poached with rock shrimp on Le Quartier Baking Company cheddar bread with Milton Creamery old style white cheddar and gouda.  Served with a cup of Hornung Garden heirloom tomato soup and a drink.  These go quick friends....come see us!!!"], ["photo", "https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/15135813_1150047185048636_1204082888554503391_n.jpg?oh=dc560cd5235e5ef9c4f1c1b5bb3a5a87&oe=58C21191"], ["created_time", "2016-11-23T16:13:01+0000"], ["created_at", "2016-11-23 22:19:48.551624"], ["updated_at", "2016-11-23 22:19:48.551624"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 744ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/facebook" for ::1 at 2016-11-23 16:19:48 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (0.4ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-11-23T16:13:01+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 364ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-11-23 16:19:48 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[36mDailySpecial Load (0.3ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1[0m  [["sent", "false"]]
+  Rendered site/todaysspecial.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 339ms (Views: 338.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blast" for ::1 at 2016-11-23 16:20:05 -0600
+Processing by SiteController#send_blast as HTML
+  [1m[35mDailySpecial Load (0.4ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `each' for #<Class:0x007f88a78c8638>):
+  app/services/blast.rb:12:in `create'
+  app/controllers/site_controller.rb:22:in `send_blast'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.8ms)
