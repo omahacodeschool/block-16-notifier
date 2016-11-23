@@ -1,7 +1,7 @@
 class Phone < ActiveRecord::Base
 
-	def self.format_number(phone)
-		phone_number = phone.split("")
+	def self.format_number(phone_params={})
+		phone_number = phone_params[:number].split("")
 
 		phone_number.each do |char|
 			if char == " " || char == "-" || char == "(" || char == ")"

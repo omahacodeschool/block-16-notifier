@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "blast" => "site#send_blast"
 
 
+  get "submitted" => 'site#submitted'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

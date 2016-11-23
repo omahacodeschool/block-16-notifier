@@ -5,14 +5,16 @@ class SiteController < ApplicationController
 
 
   def create
-  @phone = Phone.format_number(phone_params)
+  phone = Phone.format_number(phone_params)
+  @saved_number = Phone.new(number:phone)
 
-	if @phone.save
+
+	if @saved_number.save
 		flash[:notice] = "Thank you for submitting your phone number.  Look forward to hearing about Block 16's amazing specials."
-		redirect_to root_path
+		redirect_to submitted_path
 	else
 		flash[:notice] = "Uh oh...something went wrong. Please enter a valid phone number with area code"
-		render :new
+		redirect_to root_path
 	end
   end
 

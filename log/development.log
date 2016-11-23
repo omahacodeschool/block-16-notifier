@@ -2038,3 +2038,213 @@ Started GET "/assets/phone.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476
 
 
 Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-11-19 15:33:25 -0600
+
+
+Started GET "/" for ::1 at 2016-11-22 14:27:36 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (4.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 529ms (Views: 495.7ms | ActiveRecord: 21.6ms)
+
+
+Started GET "/assets/phone.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-22 14:27:37 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-11-22 14:27:37 -0600
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-22 14:27:37 -0600
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-11-22 14:27:37 -0600
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-11-22 14:27:37 -0600
+
+
+Started GET "/assets/phone.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2016-11-22 14:27:37 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-11-22 14:27:37 -0600
+
+
+Started POST "/phones" for ::1 at 2016-11-22 14:27:56 -0600
+Processing by SiteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"keZlEHCHfNvIpCoUn054em63O5eMZTud0zDDWeZW4jUVYZfUlLmT/R8gc3+fcCK4AONE31V4rSoUczxsPc1fvA==", "phone"=>{"number"=>"4026608761"}, "commit"=>"Create Phone"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `split' for {"number"=>"4026608761"}:ActionController::Parameters):
+  app/models/phone.rb:4:in `format_number'
+  app/controllers/site_controller.rb:8:in `create'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.1ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (109.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (108.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (207.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-23 10:53:17 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 377ms (Views: 365.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/phone.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-23 10:53:17 -0600
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-23 10:53:17 -0600
+
+
+Started GET "/assets/phone.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2016-11-23 10:53:17 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-11-23 10:53:17 -0600
+
+
+Started POST "/phones" for ::1 at 2016-11-23 10:53:22 -0600
+Processing by SiteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nDYMN1Y53CaOI5Fnks5GM3QsIiZgfrH2DAIVGdHBZHgYsf7zsgczAFmnyAyS8BzxGnhdbrljJ0HLQeosClrZ8Q==", "phone"=>{"number"=>"4026608761"}, "commit"=>"Create Phone"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `number' for {"number"=>"4026608761"}:ActionController::Parameters):
+  app/models/phone.rb:4:in `format_number'
+  app/controllers/site_controller.rb:8:in `create'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (57.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (120.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-23 10:54:43 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 361ms (Views: 350.5ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/phones" for ::1 at 2016-11-23 10:54:52 -0600
+Processing by SiteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EWpBJdKfhTFpGyU+5wwbNUuKBfOR5N8sHl9T6bt1756V7bPhNqFqF76ffFXnMkH3Jd56u0j5SZvZHKzcYO5SFw==", "phone"=>{"number"=>"4026608761"}, "commit"=>"Create Phone"}
+Completed 500 Internal Server Error in 21947ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `split' for {"number"=>"4026608761"}:ActionController::Parameters):
+  app/models/phone.rb:4:in `format_number'
+  app/controllers/site_controller.rb:9:in `create'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (118.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-23 11:01:32 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 454ms (Views: 444.5ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/phones" for ::1 at 2016-11-23 11:01:39 -0600
+Processing by SiteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dUzzrbCAJMEmniz9j9WFOSz/B3H9p8x8lwlnY5If4CvxywFpVL7L5/EadZaP69/7Qqt4OSS6WstQSphWSYRdog==", "phone"=>{"number"=>"4026608761"}, "commit"=>"Create Phone"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `save' for "14026608761":String):
+  app/controllers/site_controller.rb:10:in `create'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.1ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (64.8ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-23 11:05:01 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 386ms (Views: 374.3ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/phones" for ::1 at 2016-11-23 11:05:05 -0600
+Processing by SiteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L7NXDAc8SyR1vPhmdTTk74UsKi0oAwpqMEfz9YFNMRerNKXI4wKkAqI4oQ11Cr4t63hVZfEenN33BAzAWtaMng==", "phone"=>{"number"=>"4026608761"}, "commit"=>"Create Phone"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `save' for nil:NilClass):
+  app/controllers/site_controller.rb:12:in `create'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (120.1ms)
+
+
+Started GET "/" for ::1 at 2016-11-23 11:06:48 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 433ms (Views: 420.5ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/phones" for ::1 at 2016-11-23 11:06:52 -0600
+Processing by SiteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zw2h/o3m7CuxwB4wkCwxs6dugQ/LRjvvGmkrqfDQsBNLilM6adgDDWZER1uQEmtxyTr+RxJbrVjdKtScK0sNmg==", "phone"=>{"number"=>"4026608761"}, "commit"=>"Create Phone"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (12.3ms)[0m  [1mINSERT INTO "phones" ("number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["number", "14026608761"], ["created_at", "2016-11-23 17:06:52.889962"], ["updated_at", "2016-11-23 17:06:52.889962"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/submitted
+Completed 302 Found in 23ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/submitted" for ::1 at 2016-11-23 11:06:52 -0600
+Processing by SiteController#submitted as HTML
+  Rendered site/submitted.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+  [1m[36mPhone Load (0.6ms)[0m  [1mSELECT "phones".* FROM "phones"[0m
