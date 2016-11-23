@@ -31,6 +31,7 @@ class SiteController < ApplicationController
 
   def most_recent_special
     @todays_special = DailySpecial.where(sent:"false")
+    render "site/todaysspecial"
   end
 
   private

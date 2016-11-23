@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get "submitted" => 'site#submitted'
 
-  get "most_recent_special" => "site#todaysspecial"
+  get "most_recent_special" => "site#most_recent_special"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
