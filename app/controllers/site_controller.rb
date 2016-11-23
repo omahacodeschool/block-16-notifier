@@ -31,7 +31,6 @@ class SiteController < ApplicationController
 
   def most_recent_special
     @todays_special = DailySpecial.where(sent:"false")
-    binding.pry
   end
 
   private
