@@ -2845,3 +2845,238 @@ NoMethodError (undefined method `each' for #<Class:0x007f88a78c8638>):
   Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
   Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-25 21:39:27 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 404ms (Views: 393.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/blast" for ::1 at 2016-11-25 21:39:32 -0600
+Processing by SiteController#send_blast as HTML
+  [1m[35mDailySpecial Load (1.6ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mPhone Load (1.7ms)[0m  [1mSELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" ASC LIMIT 1000[0m
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.7ms)
+
+TypeError (no implicit conversion of Array into String):
+  app/services/blast.rb:13:in `block in create'
+  app/services/blast.rb:12:in `create'
+  app/controllers/site_controller.rb:22:in `send_blast'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.0ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (144.2ms)
+
+
+Started GET "/blast" for ::1 at 2016-11-25 21:41:05 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#send_blast as HTML
+  [1m[35mDailySpecial Load (0.9ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mPhone Load (0.7ms)[0m  [1mSELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" ASC LIMIT 1000[0m
+Completed 500 Internal Server Error in 81562ms (ActiveRecord: 6.0ms)
+
+TypeError (no implicit conversion of Array into String):
+  app/services/blast.rb:14:in `block in create'
+  app/services/blast.rb:12:in `create'
+  app/controllers/site_controller.rb:22:in `send_blast'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.0ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (126.9ms)
+
+
+Started GET "/blast" for ::1 at 2016-11-25 21:47:19 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#send_blast as HTML
+  [1m[35mDailySpecial Load (0.8ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mPhone Load (1.0ms)[0m  [1mSELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" ASC LIMIT 1000[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+  [1m[35mDailySpecial Load (0.4ms)[0m  SELECT  "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1 LIMIT 1  [["sent", "false"]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  UPDATE "daily_specials" SET "sent" = $1, "updated_at" = $2 WHERE "daily_specials"."id" = $3  [["sent", "true"], ["updated_at", "2016-11-26 03:47:20.726220"], ["id", 5]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mDailySpecial Load (0.5ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1
+Completed 500 Internal Server Error in 1384ms (ActiveRecord: 12.8ms)
+
+ActionView::MissingTemplate (Missing template site/send_blast, application/send_blast with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/Users/ocs-guest/Documents/MDCode/block-16-notifier/app/views"
+):
+  actionview (4.2.7) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.7) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.7) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/ocs-guest/.rvm/rubies/ruby-2.3.2/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ocs-guest/.rvm/rubies/ruby-2.3.2/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/ocs-guest/.rvm/rubies/ruby-2.3.2/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/ocs-guest/.rvm/rubies/ruby-2.3.2/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (14.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (71.1ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.0ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (123.0ms)
+  [1m[36mDailySpecial Load (0.6ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials"[0m
+  [1m[35mDailySpecial Load (0.8ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1
+  [1m[36mDailySpecial Load (0.6ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1[0m
+  [1m[35mDailySpecial Load (0.6ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1
+  [1m[36mSQL (8.8ms)[0m  [1mDELETE FROM "daily_specials" WHERE "daily_specials"."id" = $1[0m  [["id", 5]]
+  [1m[35mDailySpecial Load (0.5ms)[0m  SELECT "daily_specials".* FROM "daily_specials"
+
+
+Started GET "/" for ::1 at 2016-11-25 21:51:42 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 340ms (Views: 332.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/facebook" for ::1 at 2016-11-25 21:51:49 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (0.4ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-11-25T15:37:43+0000"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "daily_specials" ("text", "photo", "created_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["text", "You never want to \"overrun\" a special.  But we have had so many requests for the poutine burrito this week that we feel we need to run it again today!  After all, it is Thanksgiving and we're most thankful for all of you.  So here it is!  Shaved steak, tater tots, B16 gravy, cheese curds and malt vinegar aioli in a grilled burrito.  As always, we've got one chef JUST making these, so if your group only orders specials...your food will come out much faster!\n\n***REMINDER.  NO DINNER SERVICE TONIGHT.  We will close promptly at 3 p.m.  We're doing a couple hours of maintenance and then we're heading to Au Courant Regional Kitchen for dinner....hopefully we see you all there.  Now, come see us!"], ["photo", "https://scontent.xx.fbcdn.net/v/t1.0-0/p480x480/15109457_1152288208157867_3684604785378154584_n.jpg?oh=c4566753c43d41d2dc8867b6b8f106fc&oe=58BBE2AC"], ["created_time", "2016-11-25T15:37:43+0000"], ["created_at", "2016-11-26 03:51:50.301404"], ["updated_at", "2016-11-26 03:51:50.301404"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 819ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-11-25 21:51:50 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[35mDailySpecial Load (0.2ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1  [["sent", "false"]]
+  Rendered site/todaysspecial.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blast" for ::1 at 2016-11-25 21:52:00 -0600
+Processing by SiteController#send_blast as HTML
+  [1m[36mDailySpecial Load (0.4ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+  [1m[35mPhone Load (0.7ms)[0m  SELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" ASC LIMIT 1000
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mDailySpecial Load (0.4ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1 LIMIT 1[0m  [["sent", "false"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "daily_specials" SET "sent" = $1, "updated_at" = $2 WHERE "daily_specials"."id" = $3[0m  [["sent", "true"], ["updated_at", "2016-11-26 03:52:01.704761"], ["id", 6]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36mDailySpecial Load (0.4ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1[0m
+  Rendered site/blast.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1325ms (Views: 29.7ms | ActiveRecord: 3.8ms)

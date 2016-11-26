@@ -21,6 +21,7 @@ class SiteController < ApplicationController
   def send_blast
   	@new_blast = Blast.create
     @blast_info = DailySpecial.last
+    render "site/blast"
 
   end
 

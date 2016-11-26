@@ -9,8 +9,8 @@ class Blast
             # We still have to populate the message (probably in the send_message method)
         else 
           saved_numbers = Array.new
-          Phone.each do |element|
-            element.number << saved_numbers
+          Phone.find_each do |element|
+            saved_numbers << element.number
           end
     		  saved_numbers.each do |element|
     		    sendSpecialText = Updater.send_update_to_subscribers(element)
