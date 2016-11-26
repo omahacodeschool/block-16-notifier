@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
   get 'site/home'
 
-  get 'site/submitted'
+  post "phones" => 'site#create'
+
+  get "facebook" => "site#check_facebook_api"
+
+  root to: "site#home"
+
+  get "blast" => "site#send_blast"
+
+
+  get "submitted" => 'site#submitted'
+
+  get "most_recent_special" => "site#most_recent_special"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
