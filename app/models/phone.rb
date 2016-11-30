@@ -12,7 +12,10 @@ class Phone < ActiveRecord::Base
 			end
 		end		
 		formatted_number = phone_number.join
-		binding.pry
+		# As of now, this method isn't actually figuring out the 1 digit.  will have to investigte why.
+		
+		# Maybe just reverse the conditional???
+		
 		if formatted_number[0] != 1
 			formatted_number.insert(0, "1")
 		else
