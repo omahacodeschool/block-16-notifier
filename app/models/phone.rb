@@ -1,4 +1,6 @@
 class Phone < ActiveRecord::Base
+	validates :number, length: { is: 11 }
+	validates_format_of :number, :with => /[0-9]/
 
 	def self.format_number(phone_params={})
 		phone_number = phone_params[:number].split("")
@@ -10,6 +12,7 @@ class Phone < ActiveRecord::Base
 			end
 		end		
 		formatted_number = phone_number.join
+		binding.pry
 		if formatted_number[0] != 1
 			formatted_number.insert(0, "1")
 		else

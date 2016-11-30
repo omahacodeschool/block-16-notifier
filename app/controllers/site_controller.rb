@@ -9,13 +9,13 @@ class SiteController < ApplicationController
   @saved_number = Phone.new(number:phone)
 
 
-	if @saved_number.save
-		flash[:notice] = "Thank you for submitting your phone number.  Look forward to hearing about Block 16's amazing specials."
-		redirect_to submitted_path
-	else
-		flash[:notice] = "Uh oh...something went wrong. Please enter a valid phone number with area code"
-		redirect_to root_path
-	end
+  	if @saved_number.save
+  		redirect_to submitted_path
+  	else
+      binding.pry
+  		flash[:notice] = "Uh oh...something went wrong. Please enter a valid phone number with area code!"
+  		redirect_to root_path
+  	end
   end
 
   def send_blast

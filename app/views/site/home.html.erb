@@ -1,5 +1,9 @@
 <p> Please enter your phone number to receive updates for the daily specials at Block 16!</p>
 
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+
 <%= form_for @phone do |form| %>
 
 		<div>
