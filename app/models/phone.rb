@@ -16,7 +16,7 @@ class Phone < ActiveRecord::Base
 		
 		# Maybe just reverse the conditional???
 		
-		if formatted_number[0] != 1
+		if formatted_number[0] != "1"
 			formatted_number.insert(0, "1")
 		else
 		end

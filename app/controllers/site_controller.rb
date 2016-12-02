@@ -16,7 +16,6 @@ http_basic_authenticate_with name: ENV['ADMIN_NAME'], password: ENV['ADMIN_PASS'
   	if @saved_number.save
   		redirect_to submitted_path
   	else
-      binding.pry
   		flash[:notice] = "Uh oh...something went wrong. Please enter a valid phone number with area code!"
   		redirect_to root_path
   	end
