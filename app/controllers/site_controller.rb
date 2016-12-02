@@ -1,4 +1,8 @@
 class SiteController < ApplicationController
+http_basic_authenticate_with name: ENV['ADMIN_NAME'], password: ENV['ADMIN_PASS'], except: [:home, :create]
+
+
+
   def home
   	@phone = Phone.new
   end
