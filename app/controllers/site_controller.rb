@@ -34,7 +34,7 @@ http_basic_authenticate_with name: ENV['ADMIN_NAME'], password: ENV['ADMIN_PASS'
   end
 
   def most_recent_special
-    @todays_special = DailySpecial.where(sent:"false")
+    @todays_special = DailySpecial.order("created_at").last
     render "site/todaysspecial"
   end
 

@@ -4305,3 +4305,391 @@ Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
   [1m[35mSQL (0.4ms)[0m  DELETE FROM "phones" WHERE "phones"."id" = $1  [["id", 12]]
   [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
   [1m[35mPhone Load (0.4ms)[0m  SELECT "phones".* FROM "phones"
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:40:42 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (2.5ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-12-02T16:00:03+0000"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.6ms)[0m  INSERT INTO "daily_specials" ("text", "photo", "created_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["text", "Carolina Reuben Today!!!  Slllloooowwww smoked brisket, jack n' coke bbq sauce, Milton Creamery white cheddar and creamy coleslaw on griddled jalapeno cornbread.  Don't miss it.  We've also got Heritage turkey and dumpling soup to warm you up. Get down here!!!"], ["photo", "https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/15267676_1159379057448782_5738447221319440332_n.jpg?oh=ec0cee426207834fe53c9ebf76975efb&oe=58C2BE40"], ["created_time", "2016-12-02T16:00:03+0000"], ["created_at", "2016-12-02 17:40:43.243368"], ["updated_at", "2016-12-02 17:40:43.243368"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 830ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:40:43 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[35mDailySpecial Load (0.3ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1  [["sent", "false"]]
+  Rendered site/todaysspecial.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 378ms (Views: 376.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/phone.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-12-02 11:40:43 -0600
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-12-02 11:40:43 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-12-02 11:40:43 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-12-02 11:40:43 -0600
+
+
+Started GET "/assets/phone.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2016-12-02 11:40:43 -0600
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-12-02 11:40:43 -0600
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-02 11:40:43 -0600
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:41:10 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[36mDailySpecial Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1[0m  [["created_time", "2016-12-02T16:00:03+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 743ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:41:11 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[35mDailySpecial Load (0.3ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1  [["sent", "false"]]
+  Rendered site/todaysspecial.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blast" for ::1 at 2016-12-02 11:41:28 -0600
+Processing by SiteController#send_blast as HTML
+  [1m[36mDailySpecial Load (0.6ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+  [1m[35mPhone Load (1.2ms)[0m  SELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" ASC LIMIT 1000
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mDailySpecial Load (0.4ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1 LIMIT 1[0m  [["sent", "false"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "daily_specials" SET "sent" = $1, "updated_at" = $2 WHERE "daily_specials"."id" = $3[0m  [["sent", "true"], ["updated_at", "2016-12-02 17:41:29.637721"], ["id", 7]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mDailySpecial Load (0.6ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1[0m
+  Rendered site/blast.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 1670ms (Views: 33.5ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for ::1 at 2016-12-02 11:42:11 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 64ms (Views: 63.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/phone.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-12-02 11:42:11 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-12-02 11:42:12 -0600
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-02 11:42:12 -0600
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-12-02 11:42:12 -0600
+
+
+Started GET "/assets/phone.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2016-12-02 11:42:12 -0600
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-12-02 11:42:12 -0600
+
+
+Started GET "/" for ::1 at 2016-12-02 11:42:17 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:42:19 -0600
+Processing by SiteController#check_facebook_api as HTML
+Filter chain halted as #<Proc:0x007fcb7ed1ba40@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:42:33 -0600
+Processing by SiteController#check_facebook_api as HTML
+Filter chain halted as #<Proc:0x007fcb7ed1ba40@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:43:17 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (0.6ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-12-02T16:00:03+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 384ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:43:18 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[36mDailySpecial Load (0.3ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1[0m  [["sent", "false"]]
+  Rendered site/todaysspecial.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `text' for nil:NilClass):
+    1: <p> This page should show the most recent special pulled from Block 16's facebook!<p><br><br>
+    2: 
+    3: <%= @todays_special[0].text %><br>
+    4: 
+    5: <%= image_tag(@todays_special[0].photo) %><br> 
+    6: <!-- This might not work as is, might need to actually label it! -->
+  app/views/site/todaysspecial.html.erb:3:in `_app_views_site_todaysspecial_html_erb___156415046685301585_70255989943880'
+  app/controllers/site_controller.rb:38:in `most_recent_special'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (142.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-02 11:47:39 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 42ms (Views: 29.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-02 11:47:43 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:47:44 -0600
+Processing by SiteController#check_facebook_api as HTML
+Filter chain halted as #<Proc:0x007fcb80a50980@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:47:45 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (0.3ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-12-02T16:00:03+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 450ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:47:45 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[36mDailySpecial Load (3.3ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY created_at DESC LIMIT 1[0m
+  Rendered site/todaysspecial.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.9ms)
+
+ActionView::Template::Error (undefined method `text' for nil:NilClass):
+    1: <p> This page should show the most recent special pulled from Block 16's facebook!<p><br><br>
+    2: 
+    3: <%= @todays_special[0].text %><br>
+    4: 
+    5: <%= image_tag(@todays_special[0].photo) %><br> 
+    6: <!-- This might not work as is, might need to actually label it! -->
+  app/views/site/todaysspecial.html.erb:3:in `_app_views_site_todaysspecial_html_erb___156415046685301585_70255989943880'
+  app/controllers/site_controller.rb:38:in `most_recent_special'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (110.5ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:48:10 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (0.3ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-12-02T16:00:03+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 329ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:48:11 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[36mDailySpecial Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1[0m  [["created_time", "2016-12-02T16:00:03+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 375ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:48:11 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[35mDailySpecial Load (0.4ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY created_at DESC LIMIT 1
+  Rendered site/todaysspecial.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `text' for nil:NilClass):
+    1: <p> This page should show the most recent special pulled from Block 16's facebook!<p><br><br>
+    2: 
+    3: <%= @todays_special[0].text %><br>
+    4: 
+    5: <%= image_tag(@todays_special[0].photo) %><br> 
+    6: <!-- This might not work as is, might need to actually label it! -->
+  app/views/site/todaysspecial.html.erb:3:in `_app_views_site_todaysspecial_html_erb___156415046685301585_70255989943880'
+  app/controllers/site_controller.rb:38:in `most_recent_special'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (117.5ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:48:34 -0600
+Processing by SiteController#check_facebook_api as HTML
+Filter chain halted as #<Proc:0x007fcb81293b38@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:48:35 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[36mDailySpecial Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1[0m  [["created_time", "2016-12-02T16:00:03+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 327ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:48:35 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[35mDailySpecial Load (0.5ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY created_at DESC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY created_at DESC LIMIT 1[0m
+  Rendered site/todaysspecial.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 113490ms (Views: 37.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:50:50 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#check_facebook_api as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:50:50 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (0.5ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-12-02T16:00:03+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 358ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:50:50 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[36mDailySpecial Load (0.9ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY created_at DESC LIMIT 1[0m
+  Rendered site/todaysspecial.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 6873ms (Views: 337.0ms | ActiveRecord: 3.1ms)
+  [1m[36mDailySpecial Load (0.9ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "daily_specials" SET "sent" = $1, "updated_at" = $2 WHERE "daily_specials"."id" = $3[0m  [["sent", "false"], ["updated_at", "2016-12-02 17:52:01.948190"], ["id", 7]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36mDailySpecial Load (0.6ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1[0m
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:52:14 -0600
+Processing by SiteController#check_facebook_api as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-02 11:52:15 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (0.8ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-12-02T16:00:03+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 417ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:52:15 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[36mDailySpecial Load (0.7ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY created_at DESC LIMIT 1[0m
+  Rendered site/todaysspecial.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3273ms (Views: 57.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:53:54 -0600
+Processing by SiteController#most_recent_special as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:53:55 -0600
+Processing by SiteController#most_recent_special as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:53:55 -0600
+Processing by SiteController#most_recent_special as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:53:55 -0600
+Processing by SiteController#most_recent_special as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:53:56 -0600
+Processing by SiteController#most_recent_special as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:53:56 -0600
+Processing by SiteController#most_recent_special as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:53:57 -0600
+Processing by SiteController#most_recent_special as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:53:57 -0600
+Processing by SiteController#most_recent_special as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:53:57 -0600
+Processing by SiteController#most_recent_special as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:53:58 -0600
+Processing by SiteController#most_recent_special as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-02 11:53:58 -0600
+Processing by SiteController#most_recent_special as HTML
+Filter chain halted as #<Proc:0x007fe5dfe0b4c0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-02 11:53:58 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 93ms (Views: 76.8ms | ActiveRecord: 1.9ms)
