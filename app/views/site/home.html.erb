@@ -1,15 +1,19 @@
-<p> Please enter your phone number to receive updates for the daily specials at Block 16!</p>
+<div class="container">
+	<img src="assets/block16.png" alt=""/>
+	<div> Please enter your phone number to receive updates for the daily specials at Block 16!</div>
 
-<% flash.each do |key, value| %>
-  <%= content_tag :div, value, class: "flash #{key}" %>
-<% end %>
+	
+	<% flash.each do |key, value| %>
+	  <%= content_tag :div, value, class: "flash #{key}" %>
+	<% end %>
 
-<%= form_for @phone do |form| %>
+	<%= form_for @phone do |form| %>
 
-		<div>
-			<%= form.label :number %>
-			<%= form.text_field :number %>
-		</div>
+			<div>
+				<%= form.label :number %>
+				<%= form.text_field :number %>
+			</div>
 
-	<%= form.submit "Submit my number" %>
-<% end %>
+		<%= form.submit "Submit my number" %>
+	<% end %>
+</div>
