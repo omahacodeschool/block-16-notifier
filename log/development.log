@@ -4693,3 +4693,117 @@ Started GET "/" for ::1 at 2016-12-02 11:53:58 -0600
 Processing by SiteController#home as HTML
   Rendered site/home.html.erb within layouts/application (55.2ms)
 Completed 200 OK in 93ms (Views: 76.8ms | ActiveRecord: 1.9ms)
+  [1m[36mDailySpecial Load (3.5ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials"[0m
+  [1m[35mDailySpecial Load (0.6ms)[0m  SELECT "daily_specials".* FROM "daily_specials"
+  [1m[36mDailySpecial Load (1.3ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1[0m  [["sent", "false"]]
+
+
+Started GET "/" for ::1 at 2016-12-06 10:47:32 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 455ms (Views: 446.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-12-06 10:47:33 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/phone.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-12-06 10:47:33 -0600
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-12-06 10:47:33 -0600
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-06 10:47:33 -0600
+
+
+Started GET "/assets/phone.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2016-12-06 10:47:33 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-12-06 10:47:33 -0600
+
+
+Started GET "/facebook" for ::1 at 2016-12-06 10:47:37 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (1.3ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-12-06T16:01:19+0000"]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (18.2ms)[0m  INSERT INTO "daily_specials" ("text", "photo", "created_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["text", "Ryan's Fall Pork Sandwich Today!!!  Herb roasted pork loin, balsamic marinated honeycrisp apples, smoked carrot-pecan spread, mustard greens and Milton Creamery white cheddar on Le Quartier Baking Company toasted cheddar bread.  Served with a hot bowl of hamhock, white bean and herb soup.  Don't miss it.  Get down here!!!"], ["photo", "https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/15390770_1165106580209363_2826777233576806877_n.jpg?oh=66849f11730b9439da9bd82fcefe3cb4&oe=58FA64D8"], ["created_time", "2016-12-06T16:01:19+0000"], ["created_at", "2016-12-06 16:48:47.112679"], ["updated_at", "2016-12-06 16:48:47.112679"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 69417ms (ActiveRecord: 24.8ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-06 10:48:47 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (0.4ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-12-06T16:01:19+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 4709ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-06 10:48:51 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[36mDailySpecial Load (4.3ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY created_at DESC LIMIT 1[0m
+  Rendered site/todaysspecial.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 28.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2016-12-06 10:52:42 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 426ms (Views: 417.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-12-06 10:52:43 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blast" for ::1 at 2016-12-06 10:52:49 -0600
+Processing by SiteController#send_blast as HTML
+  [1m[35mDailySpecial Load (0.9ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mPhone Load (1.5ms)[0m  [1mSELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" ASC LIMIT 1000[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+  [1m[35mDailySpecial Load (0.4ms)[0m  SELECT  "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1 LIMIT 1  [["sent", "false"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  UPDATE "daily_specials" SET "sent" = $1, "updated_at" = $2 WHERE "daily_specials"."id" = $3  [["sent", "true"], ["updated_at", "2016-12-06 16:53:25.061220"], ["id", 7]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mDailySpecial Load (0.5ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1
+  Rendered site/blast.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35736ms (Views: 24.4ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/blast" for ::1 at 2016-12-06 10:53:25 -0600
+Processing by SiteController#send_blast as HTML
+  [1m[36mDailySpecial Load (0.4ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+  [1m[35mPhone Load (0.4ms)[0m  SELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" ASC LIMIT 1000
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mDailySpecial Load (0.4ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1 LIMIT 1[0m  [["sent", "false"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (3.9ms)[0m  [1mUPDATE "daily_specials" SET "sent" = $1, "updated_at" = $2 WHERE "daily_specials"."id" = $3[0m  [["sent", "true"], ["updated_at", "2016-12-06 16:53:28.940192"], ["id", 8]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mDailySpecial Load (0.5ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1[0m
+  Rendered site/blast.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3860ms (Views: 13.8ms | ActiveRecord: 6.2ms)
+  [1m[36mDailySpecial Load (0.5ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials"[0m
+  [1m[35mDailySpecial Load (1.2ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "daily_specials" SET "sent" = $1, "updated_at" = $2 WHERE "daily_specials"."id" = $3  [["sent", "false"], ["updated_at", "2016-12-06 17:03:03.105594"], ["id", 8]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mDailySpecial Load (0.5ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1
+  [1m[36mPhone Load (0.7ms)[0m  [1mSELECT "phones".* FROM "phones"[0m
+  [1m[35mPhone Load (0.8ms)[0m  SELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  DELETE FROM "daily_specials" WHERE "daily_specials"."id" = $1  [["id", 8]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mPhone Load (0.6ms)[0m  SELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "phones" WHERE "phones"."id" = $1  [["id", 3]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mPhone Load (0.5ms)[0m  SELECT "phones".* FROM "phones"

@@ -7,7 +7,7 @@ class Updater
       text_number = number
       twilio_number = ENV['TWILIO_NUMBER']
       special = DailySpecial.where("sent = 'false'")[0]
-      special_text = special.text[0...100]
+      special_text = special.text[0...110] + "..."
       special_image = special.photo
       @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
 
