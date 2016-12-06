@@ -1,5 +1,5 @@
 class SiteController < ApplicationController
-http_basic_authenticate_with name: ENV['ADMIN_NAME'], password: ENV['ADMIN_PASS'], except: [:home, :create]
+http_basic_authenticate_with name: ENV['ADMIN_NAME'], password: ENV['ADMIN_PASS'], only: [:send_blast, :check_facebook_api]
 
 
 
