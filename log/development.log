@@ -4807,3 +4807,224 @@ Completed 200 OK in 3860ms (Views: 13.8ms | ActiveRecord: 6.2ms)
   [1m[35mSQL (0.5ms)[0m  DELETE FROM "phones" WHERE "phones"."id" = $1  [["id", 3]]
   [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
   [1m[35mPhone Load (0.5ms)[0m  SELECT "phones".* FROM "phones"
+
+
+Started GET "/" for ::1 at 2016-12-06 15:07:09 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (46.2ms)
+Completed 200 OK in 445ms (Views: 432.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-06 15:13:58 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 107ms (Views: 101.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/phones" for ::1 at 2016-12-06 15:14:04 -0600
+Processing by SiteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0oOVV9ADKw8452RwzbQUif+zJjInk5uWig0n4xm4/hb4t1v6xQY+1WRvL/AwDDnokImy9j0V9LY+7gev1HkBwQ==", "phone"=>{"number"=>"444-555-5555"}, "commit"=>"Submit my number"}
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mSQL (11.1ms)[0m  [1mINSERT INTO "phones" ("number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["number", "14445555555"], ["created_at", "2016-12-06 21:14:04.761436"], ["updated_at", "2016-12-06 21:14:04.761436"]]
+  [1m[35m (1.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/submitted
+Completed 302 Found in 47ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/submitted" for ::1 at 2016-12-06 15:14:04 -0600
+Processing by SiteController#submitted as HTML
+Filter chain halted as #<Proc:0x007fcdc4f38ce0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-06 15:17:49 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 161ms (Views: 155.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-06 15:17:50 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/phones" for ::1 at 2016-12-06 15:17:56 -0600
+Processing by SiteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I6wJQQDQm0QjatU7BDFA/rjwti2ubHHdPLdwWiO2d6IJmMfsFdWOnn/inrv5iW2f18oi6bTqHv2IVFAW7neIdQ==", "phone"=>{"number"=>"4026608760"}, "commit"=>"Submit my number"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.4ms)[0m  INSERT INTO "phones" ("number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["number", "14026608760"], ["created_at", "2016-12-06 21:17:56.253292"], ["updated_at", "2016-12-06 21:17:56.253292"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/submitted
+Completed 302 Found in 10ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/submitted" for ::1 at 2016-12-06 15:17:56 -0600
+Processing by SiteController#submitted as HTML
+Filter chain halted as #<Proc:0x007fcdc4f38ce0@/Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/submitted" for ::1 at 2016-12-06 15:18:01 -0600
+Processing by SiteController#submitted as HTML
+  Rendered site/submitted.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 57ms (Views: 54.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-06 15:18:08 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (1.7ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-12-06T16:01:19+0000"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "daily_specials" ("text", "photo", "created_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["text", "Ryan's Fall Pork Sandwich Today!!!  Herb roasted pork loin, balsamic marinated honeycrisp apples, smoked carrot-pecan spread, mustard greens and Milton Creamery white cheddar on Le Quartier Baking Company toasted cheddar bread.  Served with a hot bowl of hamhock, white bean and herb soup.  Don't miss it.  Get down here!!!"], ["photo", "https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/15390770_1165106580209363_2826777233576806877_n.jpg?oh=66849f11730b9439da9bd82fcefe3cb4&oe=58FA64D8"], ["created_time", "2016-12-06T16:01:19+0000"], ["created_at", "2016-12-06 21:18:09.284840"], ["updated_at", "2016-12-06 21:18:09.284840"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 835ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-06 15:18:09 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (0.3ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-12-06T16:01:19+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 315ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-06 15:18:09 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[36mDailySpecial Load (0.9ms)[0m  [1mSELECT  "daily_specials".* FROM "daily_specials"  ORDER BY created_at DESC LIMIT 1[0m
+  Rendered site/todaysspecial.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/blast" for ::1 at 2016-12-06 15:18:13 -0600
+Processing by SiteController#send_blast as HTML
+  [1m[35mDailySpecial Load (0.4ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mPhone Load (0.6ms)[0m  [1mSELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" ASC LIMIT 1000[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+Completed 500 Internal Server Error in 2405ms (ActiveRecord: 1.0ms)
+
+Twilio::REST::RequestError (The 'To' number 14445555555 is not a valid phone number.):
+  app/services/updater.rb:14:in `send_update_to_subscribers'
+  app/services/blast.rb:16:in `block in create'
+  app/services/blast.rb:15:in `each'
+  app/services/blast.rb:15:in `create'
+  app/controllers/site_controller.rb:25:in `send_blast'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (126.6ms)
+
+
+Started GET "/blast" for ::1 at 2016-12-06 15:18:15 -0600
+Processing by SiteController#send_blast as HTML
+  [1m[35mDailySpecial Load (0.3ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mPhone Load (0.3ms)[0m  [1mSELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" ASC LIMIT 1000[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+Completed 500 Internal Server Error in 845ms (ActiveRecord: 0.7ms)
+
+Twilio::REST::RequestError (The 'To' number 14445555555 is not a valid phone number.):
+  app/services/updater.rb:14:in `send_update_to_subscribers'
+  app/services/blast.rb:16:in `block in create'
+  app/services/blast.rb:15:in `each'
+  app/services/blast.rb:15:in `create'
+  app/controllers/site_controller.rb:25:in `send_blast'
+
+
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.2ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (46.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/ocs-guest/.rvm/gems/ruby-2.3.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (103.8ms)
+  [1m[36mPhone Load (0.5ms)[0m  [1mSELECT "phones".* FROM "phones"[0m
+  [1m[35mPhone Load (1.2ms)[0m  SELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  DELETE FROM "phones" WHERE "phones"."id" = $1  [["id", 15]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mPhone Load (0.7ms)[0m  SELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "phones" WHERE "phones"."id" = $1  [["id", 14]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mPhone Load (0.5ms)[0m  SELECT "phones".* FROM "phones"
+
+
+Started GET "/" for ::1 at 2016-12-06 15:19:33 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (60.4ms)
+Completed 200 OK in 488ms (Views: 475.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-06 15:19:37 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[35mDailySpecial Exists (0.6ms)[0m  SELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1  [["created_time", "2016-12-06T16:01:19+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 1455ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-06 15:19:38 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[36mDailySpecial Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1[0m  [["created_time", "2016-12-06T16:01:19+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 288ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-06 15:19:39 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[35mDailySpecial Load (0.7ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY created_at DESC LIMIT 1
+  Rendered site/todaysspecial.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 16.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/facebook" for ::1 at 2016-12-06 15:19:51 -0600
+Processing by SiteController#check_facebook_api as HTML
+  [1m[36mDailySpecial Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "daily_specials" WHERE "daily_specials"."created_time" = $1 LIMIT 1[0m  [["created_time", "2016-12-06T16:01:19+0000"]]
+Redirected to http://localhost:3000/most_recent_special
+Completed 302 Found in 369ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/most_recent_special" for ::1 at 2016-12-06 15:19:52 -0600
+Processing by SiteController#most_recent_special as HTML
+  [1m[35mDailySpecial Load (0.8ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY created_at DESC LIMIT 1
+  Rendered site/todaysspecial.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/blast" for ::1 at 2016-12-06 15:19:52 -0600
+Processing by SiteController#send_blast as HTML
+  [1m[36mDailySpecial Load (0.4ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+  [1m[35mPhone Load (1.0ms)[0m  SELECT  "phones".* FROM "phones"  ORDER BY "phones"."id" ASC LIMIT 1000
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+  [1m[35mDailySpecial Load (0.5ms)[0m  SELECT  "daily_specials".* FROM "daily_specials" WHERE "daily_specials"."sent" = $1 LIMIT 1  [["sent", "false"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "daily_specials" SET "sent" = $1, "updated_at" = $2 WHERE "daily_specials"."id" = $3  [["sent", "true"], ["updated_at", "2016-12-06 21:19:54.409453"], ["id", 9]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mDailySpecial Load (0.5ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1
+  Rendered site/blast.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1681ms (Views: 42.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/blast" for ::1 at 2016-12-06 15:19:54 -0600
+Processing by SiteController#send_blast as HTML
+  [1m[36mDailySpecial Load (0.3ms)[0m  [1mSELECT "daily_specials".* FROM "daily_specials" WHERE (sent = 'false')[0m
+  [1m[35mDailySpecial Load (0.5ms)[0m  SELECT  "daily_specials".* FROM "daily_specials"  ORDER BY "daily_specials"."id" DESC LIMIT 1
+  Rendered site/blast.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.8ms)
