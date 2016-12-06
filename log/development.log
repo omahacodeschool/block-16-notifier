@@ -5151,3 +5151,250 @@ Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/block16.png" for ::1 at 2016-12-04 16:23:35 -0600
+
+
+Started GET "/submitted" for ::1 at 2016-12-05 15:29:33 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#submitted as HTML
+  Rendered site/submitted.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 552ms (Views: 552.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-19985ac2e4412cfa9a548a0ce9842022d238b15cfc2ce042e1d08a5117139781.css?body=1" for ::1 at 2016-12-05 15:29:35 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:29:35 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:31:12 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (84.8ms)
+Completed 200 OK in 180ms (Views: 115.5ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:31:12 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:31:34 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 31ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:31:34 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:31:55 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:31:55 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:32:58 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:32:58 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:33:23 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:33:23 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:40:01 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 67ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-5f3cfcab683f45c6a6fb621287710ba981da83f583ad624b9e439457003632b9.css?body=1" for ::1 at 2016-12-05 15:40:01 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:40:01 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:40:39 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-f987342830b79d4ca2eafdbae3a794ca06a1001c17f7b751fb4536c800c18033.css?body=1" for ::1 at 2016-12-05 15:40:39 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:40:39 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:41:02 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 28ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-577e7e27150398cc0514b86193752983dae17505d346c3dab72bb8689500ab54.css?body=1" for ::1 at 2016-12-05 15:41:02 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:41:02 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:41:08 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-b519b6ccd4238d74948ff2e3f2381929e47636687bd278c466e55caa70b8c8dd.css?body=1" for ::1 at 2016-12-05 15:41:09 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:41:09 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:41:16 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-6f90d7a2961433aabcde839dab13d3b49cef800a16c3609d4b03c6ab9cbfbb1a.css?body=1" for ::1 at 2016-12-05 15:41:16 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:41:16 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:41:31 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:41:31 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:41:52 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-293bf0deba53fe16dffbaa0a4d7ef9043158dc13a5bae4047f77200115403ca7.css?body=1" for ::1 at 2016-12-05 15:41:52 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:41:52 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:42:02 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-00122bb67009c482b4082d4fb626f275cb2bc1b716d50a0efa75ad37914d0e2c.css?body=1" for ::1 at 2016-12-05 15:42:02 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:42:02 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:43:05 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-5f403bee25eb24c781ec33a6a62b1f895a0061393c28d04a5942390b153e618c.css?body=1" for ::1 at 2016-12-05 15:43:05 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:43:05 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:43:11 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-d926cd8d58367db71aa5527cdcef8e6860950403dc9d5bd929f08e5868e0e4de.css?body=1" for ::1 at 2016-12-05 15:43:11 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:43:11 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 15:43:39 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 25ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-72dd04aa5883b3c0cc61fb6cbc2baf51fe5ffbc594bc28304edb0fa138a4108f.css?body=1" for ::1 at 2016-12-05 15:43:39 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 15:43:39 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 16:02:17 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 71ms (Views: 70.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 16:02:17 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 16:04:35 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 64ms (Views: 63.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/phone.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-12-05 16:04:36 -0600
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-12-05 16:04:36 -0600
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-12-05 16:04:36 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-12-05 16:04:36 -0600
+
+
+Started GET "/assets/style.self-ddd46efc9218d6ae7b355d01b4a7b58e9938faee53bc757797ea3cd7338f917e.css?body=1" for ::1 at 2016-12-05 16:04:36 -0600
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-05 16:04:36 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-12-05 16:04:36 -0600
+
+
+Started GET "/assets/phone.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2016-12-05 16:04:36 -0600
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 16:04:36 -0600
+
+
+Started GET "/" for ::1 at 2016-12-05 16:05:53 -0600
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 18ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 16:05:53 -0600
+
+
+Started GET "/submitted" for ::1 at 2016-12-05 16:06:49 -0600
+Processing by SiteController#submitted as HTML
+  Rendered site/submitted.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 13ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/block16.png" for ::1 at 2016-12-05 16:06:49 -0600

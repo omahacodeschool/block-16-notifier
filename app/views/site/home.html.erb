@@ -1,19 +1,19 @@
 <div class="container">
-	<img src="assets/block16.png" alt=""/>
-	<div> Please enter your phone number to receive updates for the daily specials at Block 16!</div>
+	<img src="assets/block16.png" alt=""/><br>
+	<div class="merriweather"> Please enter your phone number to receive<br> updates for the daily specials at Block 16!</div><br>
 
 	
 	<% flash.each do |key, value| %>
-	  <%= content_tag :div, value, class: "flash #{key}" %>
+	  <%= content_tag :div, value, class: "flash #{key} merriweather" %>
 	<% end %>
 
 	<%= form_for @phone do |form| %>
 
 			<div>
-				<%= form.label :number %>
+				<%= form.label :number, class: "merriweather" %>
 				<%= form.text_field :number %>
-			</div>
+			</div><br>
 
-		<%= form.submit "Submit my number" %>
+		<%= form.submit "Submit My Number", class: "button" %>
 	<% end %>
 </div>
