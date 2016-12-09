@@ -19,12 +19,13 @@ class Facebook
              message = apiInfo["data"][0]["message"]
              image = apiInfo["data"][0]["attachments"]["data"][0]["media"]["image"]["src"]
              created_at_time = apiInfo["data"][0]["created_time"]
+             post_id = apiInfo["data"][0]["id"]
         end
 
         # The below method checks to see if the newest message is a duplicate before adding anything to the database.
 
         if !self.is_duplicate?(created_at_time)
-            DailySpecial.create(text: message, photo: image, created_time: created_at_time)
+            DailySpecial.create(text: message, photo: image, created_time: created_at_time, postID: post_id)
             # In the database, 'DailySpecial' would have 'sent' be 'false' by default.
         end
 

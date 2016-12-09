@@ -17,6 +17,7 @@ class Blast
 	      end
         # The below section should update the DB record with the false entry, and make it true so that it won't catch that entry
         # and send another blast.
+        
         daily_special_entry = DailySpecial.find_by(sent: 'false')
         daily_special_entry.update(sent: 'true')
 	    end
